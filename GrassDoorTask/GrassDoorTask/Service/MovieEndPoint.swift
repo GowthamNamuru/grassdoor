@@ -11,13 +11,12 @@ enum MovieEndPoint: String {
     case topRated = "top_rated"
     case popular
     
+    private var baseURL: String {
+        return "https://api.themoviedb.org/3"
+    }
+    
     /// These will be updated later
     var url: URL? {
-        switch self {
-        case .topRated:
-            return URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=7f66a4f9aceca93fb08ae8eb41cb05c2&language=en-US&page=1")
-        case .popular:
-            return URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=7f66a4f9aceca93fb08ae8eb41cb05c2&language=en-US&page=1")
-        }
+        return URL(string: "\(baseURL)/movie/\(rawValue)")
     }
 }

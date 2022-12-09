@@ -139,7 +139,7 @@ final class HTTPClientSpy: HTTPClient {
     
     var messages: [(HTTPURLResult) -> Void] = []
     
-    func get(from url: URL, completion: @escaping (HTTPURLResult) -> Void) {
+    func get(from url: URL, params: [String: String]?, completion: @escaping (HTTPURLResult) -> Void) {
         messages.append((completion))
     }
     

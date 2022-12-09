@@ -17,5 +17,5 @@ protocol HTTPClient {
     
     /// The completion handler can be invoked in any thread.
     /// Clents are responsible to dispatch to appropiate thread, if needed.
-    func get(from url: URL, completion: @escaping (HTTPURLResult) -> Void)
+    func get(from url: URL, params: [String: String]?, completion: @escaping (HTTPURLResult) -> Void)
 }

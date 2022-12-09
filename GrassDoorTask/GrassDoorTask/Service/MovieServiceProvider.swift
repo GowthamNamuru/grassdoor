@@ -25,12 +25,12 @@ final class MovieServiceProvider: MovieService {
         guard let url = endPoint.url else {
             return
         }
-        client.get(from: url) { [weak self] result in
+        client.get(from: url, params: [:]) { [weak self] result in
             guard self != nil else {
                 return
             }
             switch result {
-            case let .failure:
+            case .failure:
                 completionHandler(.failure(Error.connectivity))
             case let .success(data, response):
                 completionHandler(MovieServiceProvider.map(data, from: response))
