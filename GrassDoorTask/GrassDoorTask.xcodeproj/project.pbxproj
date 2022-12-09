@@ -23,6 +23,8 @@
 		D4259B812943793B00D2E65B /* MovieServiceProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B802943793B00D2E65B /* MovieServiceProviderTests.swift */; };
 		D4259B8429437CFC00D2E65B /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B8329437CFC00D2E65B /* HTTPClient.swift */; };
 		D4259B8729437E7F00D2E65B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B8629437E7F00D2E65B /* Utils.swift */; };
+		D434534A29439F4E003DAD95 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D434534929439F4E003DAD95 /* URLSessionHTTPClient.swift */; };
+		D434534C29439F9D003DAD95 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D434534B29439F9D003DAD95 /* URLSessionHTTPClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		D4259B802943793B00D2E65B /* MovieServiceProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServiceProviderTests.swift; sourceTree = "<group>"; };
 		D4259B8329437CFC00D2E65B /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D4259B8629437E7F00D2E65B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		D434534929439F4E003DAD95 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		D434534B29439F9D003DAD95 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 			children = (
 				D4259B802943793B00D2E65B /* MovieServiceProviderTests.swift */,
 				D4259B7F2943793B00D2E65B /* GrassDoorTaskTests-Bridging-Header.h */,
+				D434534B29439F9D003DAD95 /* URLSessionHTTPClientTests.swift */,
 			);
 			path = GrassDoorTaskTests;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				D4259B8329437CFC00D2E65B /* HTTPClient.swift */,
+				D434534929439F4E003DAD95 /* URLSessionHTTPClient.swift */,
 			);
 			path = HTTPClient;
 			sourceTree = "<group>";
@@ -346,6 +352,7 @@
 				D4259B3D2943635600D2E65B /* GrassDoorTaskApp.swift in Sources */,
 				D4259B7A2943777B00D2E65B /* MovieService.swift in Sources */,
 				D4259B7C2943778E00D2E65B /* MovieEndPoint.swift in Sources */,
+				D434534A29439F4E003DAD95 /* URLSessionHTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4259B812943793B00D2E65B /* MovieServiceProviderTests.swift in Sources */,
+				D434534C29439F9D003DAD95 /* URLSessionHTTPClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

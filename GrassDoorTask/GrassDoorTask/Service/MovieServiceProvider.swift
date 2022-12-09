@@ -30,7 +30,7 @@ final class MovieServiceProvider: MovieService {
                 return
             }
             switch result {
-            case let .failure(error):
+            case let .failure:
                 completionHandler(.failure(Error.connectivity))
             case let .success(data, response):
                 completionHandler(MovieServiceProvider.map(data, from: response))
