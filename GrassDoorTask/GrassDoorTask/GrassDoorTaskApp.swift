@@ -12,7 +12,7 @@ struct GrassDoorTaskApp: App {
 
     var body: some Scene {
         WindowGroup {
-            Main()
+            ContentView()
         }
     }
 }

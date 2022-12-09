@@ -6,17 +6,20 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct ContentView: View {
-    var title: String
-    
     var body: some View {
-        Text(title)
+        NavigationView {
+            Group {
+                HomeTab()
+            }
+            .navigationBarTitle("Movies", displayMode: .automatic)
+        }
+        
     }
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(title: "Some title")
+        ContentView()
     }
 }
