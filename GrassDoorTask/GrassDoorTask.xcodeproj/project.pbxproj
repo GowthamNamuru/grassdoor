@@ -17,6 +17,7 @@
 		D4259B5D2943636000D2E65B /* GrassDoorTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B5C2943636000D2E65B /* GrassDoorTaskUITests.swift */; };
 		D4259B5F2943636000D2E65B /* GrassDoorTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B5E2943636000D2E65B /* GrassDoorTaskUITestsLaunchTests.swift */; };
 		D4259B7229436D0900D2E65B /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B7129436D0900D2E65B /* Main.swift */; };
+		D4259B752943714000D2E65B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B742943714000D2E65B /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		D4259B5C2943636000D2E65B /* GrassDoorTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrassDoorTaskUITests.swift; sourceTree = "<group>"; };
 		D4259B5E2943636000D2E65B /* GrassDoorTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrassDoorTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D4259B7129436D0900D2E65B /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		D4259B742943714000D2E65B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		D4259B3B2943635600D2E65B /* GrassDoorTask */ = {
 			isa = PBXGroup;
 			children = (
+				D4259B732943712F00D2E65B /* Model */,
 				D4259B7029436C3300D2E65B /* Storage */,
 				D4259B6F29436C1200D2E65B /* View */,
 				D4259B3C2943635600D2E65B /* GrassDoorTaskApp.swift */,
@@ -150,6 +153,14 @@
 				D4259B472943635F00D2E65B /* GrassDoorTask.xcdatamodeld */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		D4259B732943712F00D2E65B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D4259B742943714000D2E65B /* Movie.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +295,7 @@
 			files = (
 				D4259B7229436D0900D2E65B /* Main.swift in Sources */,
 				D4259B462943635F00D2E65B /* Persistence.swift in Sources */,
+				D4259B752943714000D2E65B /* Movie.swift in Sources */,
 				D4259B492943635F00D2E65B /* GrassDoorTask.xcdatamodeld in Sources */,
 				D4259B3F2943635600D2E65B /* ContentView.swift in Sources */,
 				D4259B3D2943635600D2E65B /* GrassDoorTaskApp.swift in Sources */,
