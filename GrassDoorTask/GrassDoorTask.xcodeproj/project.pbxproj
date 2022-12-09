@@ -34,6 +34,7 @@
 		D434535C2943B912003DAD95 /* EnvironmentValues+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D434535B2943B912003DAD95 /* EnvironmentValues+ImageCache.swift */; };
 		D434535E2943B9C6003DAD95 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D434535D2943B9C6003DAD95 /* AsyncImage.swift */; };
 		D43453622943BD9A003DAD95 /* MoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43453612943BD9A003DAD95 /* MoviesView.swift */; };
+		D43453642943C2C3003DAD95 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43453632943C2C3003DAD95 /* MovieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		D434535B2943B912003DAD95 /* EnvironmentValues+ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ImageCache.swift"; sourceTree = "<group>"; };
 		D434535D2943B9C6003DAD95 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		D43453612943BD9A003DAD95 /* MoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesView.swift; sourceTree = "<group>"; };
+		D43453632943C2C3003DAD95 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				D43453512943A97A003DAD95 /* TopRated.swift */,
 				D434535D2943B9C6003DAD95 /* AsyncImage.swift */,
 				D43453612943BD9A003DAD95 /* MoviesView.swift */,
+				D43453632943C2C3003DAD95 /* MovieCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				D4259B8729437E7F00D2E65B /* Utils.swift in Sources */,
 				D434535C2943B912003DAD95 /* EnvironmentValues+ImageCache.swift in Sources */,
 				D43453582943B10C003DAD95 /* ImageDownloader.swift in Sources */,
+				D43453642943C2C3003DAD95 /* MovieCell.swift in Sources */,
 				D4259B3D2943635600D2E65B /* GrassDoorTaskApp.swift in Sources */,
 				D434535A2943B379003DAD95 /* ImageCache.swift in Sources */,
 				D4259B7A2943777B00D2E65B /* MovieService.swift in Sources */,

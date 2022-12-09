@@ -22,11 +22,13 @@ final class MovieServiceDownloader: ObservableObject {
     
     func getMovies(endPoint: MovieEndPoint) {
         serviceProvider.fetchMovies(endPoint: endPoint) { result in
-            switch result {
-            case let .success(movies):
-                self.movies = movies
-            case .failure:
-                break
+            DispatchQueue.main.async {
+                switch result {
+                case let .success(movies):
+                    self.movies = movies
+                case .failure:
+                    break
+                }
             }
         }
     }

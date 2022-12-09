@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TopRated: View {
     var body: some View {
-        Text("Hello, Top rated!")
+        MoviesView(selectedTab: .topRated)
     }
 }
 

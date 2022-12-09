@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PopularTab: View {
     var body: some View {
-        MoviesView()
+        MoviesView(selectedTab: .popular)
     }
 }
 

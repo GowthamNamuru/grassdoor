@@ -9,11 +9,12 @@ import Foundation
 
 struct MovieViewModel {
     
-    private var movie: Movie
+    private(set) var movie: Movie
     
     private(set) var title: String
-    private(set) var posterPath: String?
-    private(set) var votingAverage: String = ""
+    private(set) var posterPath: String = ""
+    private(set) var votingAverage: Double = 0.0
+    private(set) var releaseDate: String = ""
     
     init(movie: Movie) {
         self.movie = movie
@@ -24,7 +25,8 @@ struct MovieViewModel {
         
         if let average = movie.voteAverage {
             let vAverage = average / 10.0
-            votingAverage = "\(vAverage)"
+            votingAverage = vAverage
         }
+        releaseDate = movie.releaseDate
     }
 }
