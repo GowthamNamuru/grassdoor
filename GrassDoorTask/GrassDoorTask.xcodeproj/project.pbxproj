@@ -13,13 +13,14 @@
 		D4259B442943635F00D2E65B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4259B432943635F00D2E65B /* Preview Assets.xcassets */; };
 		D4259B462943635F00D2E65B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B452943635F00D2E65B /* Persistence.swift */; };
 		D4259B492943635F00D2E65B /* GrassDoorTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4259B472943635F00D2E65B /* GrassDoorTask.xcdatamodeld */; };
-		D4259B532943636000D2E65B /* GrassDoorTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B522943636000D2E65B /* GrassDoorTaskTests.swift */; };
 		D4259B5D2943636000D2E65B /* GrassDoorTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B5C2943636000D2E65B /* GrassDoorTaskUITests.swift */; };
 		D4259B5F2943636000D2E65B /* GrassDoorTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B5E2943636000D2E65B /* GrassDoorTaskUITestsLaunchTests.swift */; };
 		D4259B7229436D0900D2E65B /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B7129436D0900D2E65B /* Main.swift */; };
 		D4259B752943714000D2E65B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B742943714000D2E65B /* Movie.swift */; };
 		D4259B7A2943777B00D2E65B /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B792943777B00D2E65B /* MovieService.swift */; };
 		D4259B7C2943778E00D2E65B /* MovieEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B7B2943778E00D2E65B /* MovieEndPoint.swift */; };
+		D4259B7E294378C800D2E65B /* MovieServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B7D294378C800D2E65B /* MovieServiceProvider.swift */; };
+		D4259B812943793B00D2E65B /* MovieServiceProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B802943793B00D2E65B /* MovieServiceProviderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +49,6 @@
 		D4259B452943635F00D2E65B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		D4259B482943635F00D2E65B /* GrassDoorTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GrassDoorTask.xcdatamodel; sourceTree = "<group>"; };
 		D4259B4E2943636000D2E65B /* GrassDoorTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrassDoorTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4259B522943636000D2E65B /* GrassDoorTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrassDoorTaskTests.swift; sourceTree = "<group>"; };
 		D4259B582943636000D2E65B /* GrassDoorTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrassDoorTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4259B5C2943636000D2E65B /* GrassDoorTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrassDoorTaskUITests.swift; sourceTree = "<group>"; };
 		D4259B5E2943636000D2E65B /* GrassDoorTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrassDoorTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -56,6 +56,9 @@
 		D4259B742943714000D2E65B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		D4259B792943777B00D2E65B /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 		D4259B7B2943778E00D2E65B /* MovieEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEndPoint.swift; sourceTree = "<group>"; };
+		D4259B7D294378C800D2E65B /* MovieServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServiceProvider.swift; sourceTree = "<group>"; };
+		D4259B7F2943793B00D2E65B /* GrassDoorTaskTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GrassDoorTaskTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		D4259B802943793B00D2E65B /* MovieServiceProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServiceProviderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +131,8 @@
 		D4259B512943636000D2E65B /* GrassDoorTaskTests */ = {
 			isa = PBXGroup;
 			children = (
-				D4259B522943636000D2E65B /* GrassDoorTaskTests.swift */,
+				D4259B802943793B00D2E65B /* MovieServiceProviderTests.swift */,
+				D4259B7F2943793B00D2E65B /* GrassDoorTaskTests-Bridging-Header.h */,
 			);
 			path = GrassDoorTaskTests;
 			sourceTree = "<group>";
@@ -173,6 +177,7 @@
 			children = (
 				D4259B792943777B00D2E65B /* MovieService.swift */,
 				D4259B7B2943778E00D2E65B /* MovieEndPoint.swift */,
+				D4259B7D294378C800D2E65B /* MovieServiceProvider.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 					};
 					D4259B4D2943636000D2E65B = {
 						CreatedOnToolsVersion = 14.0.1;
+						LastSwiftMigration = 1400;
 						TestTargetID = D4259B382943635600D2E65B;
 					};
 					D4259B572943636000D2E65B = {
@@ -307,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4259B7E294378C800D2E65B /* MovieServiceProvider.swift in Sources */,
 				D4259B7229436D0900D2E65B /* Main.swift in Sources */,
 				D4259B462943635F00D2E65B /* Persistence.swift in Sources */,
 				D4259B752943714000D2E65B /* Movie.swift in Sources */,
@@ -322,7 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4259B532943636000D2E65B /* GrassDoorTaskTests.swift in Sources */,
+				D4259B812943793B00D2E65B /* MovieServiceProviderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,15 +535,23 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 83ZCG5LQC8;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gowtham.GrassDoorTaskTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "GrassDoorTaskTests/GrassDoorTaskTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GrassDoorTask.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GrassDoorTask";
@@ -548,15 +563,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 83ZCG5LQC8;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gowtham.GrassDoorTaskTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "GrassDoorTaskTests/GrassDoorTaskTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GrassDoorTask.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GrassDoorTask";
