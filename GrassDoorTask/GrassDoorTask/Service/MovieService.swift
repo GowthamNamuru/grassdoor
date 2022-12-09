@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum LoadMovieResult {
+    case success([Movie])
+    case failure(Error)
+}
+
 protocol MovieService {
-    func fetchMovies(_ endPoint: MovieEndPoint, completionHandler: @escaping (Result<MovieResult, Error>) -> ())
+    func fetchMovies(endPoint: MovieEndPoint, completionHandler: @escaping (LoadMovieResult) -> ())
 }

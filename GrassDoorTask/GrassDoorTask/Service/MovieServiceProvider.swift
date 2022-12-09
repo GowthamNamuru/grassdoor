@@ -8,8 +8,58 @@
 import Foundation
 
 final class MovieServiceProvider: MovieService {
+    private let client: HTTPClient
     
-    func fetchMovies(_ endPoint: MovieEndPoint, completionHandler: @escaping (Result<MovieResult, Error>) -> ()) {
-        
+    init(client: HTTPClient) {
+        self.client = client
+    }
+    
+    public typealias Result = LoadMovieResult
+    
+    enum Error: Swift.Error {
+        case connectivity
+        case invalidData
+    }
+
+    func fetchMovies(endPoint: MovieEndPoint, completionHandler: @escaping (LoadMovieResult) -> ()) {
+        guard let url = endPoint.url else {
+            return
+        }
+        client.get(from: url) { [weak self] result in
+            guard self != nil else {
+                return
+            }
+            switch result {
+            case let .failure(error):
+                completionHandler(.failure(Error.connectivity))
+            case let .success(data, response):
+                completionHandler(MovieServiceProvider.map(data, from: response))
+            }
+        }
+    }
+    
+    
+    private static func map(_ data: Data, from response: HTTPURLResponse) -> Result {
+        do {
+            let items = try MovieResultMapper.map(data, from: response)
+            return .success(items)
+        } catch {
+            return .failure(error)
+        }
+    }
+}
+
+final class MovieResultMapper {
+    private struct Root: Decodable {
+        let results: [Movie]
+    }
+    
+    private static let OK_200 = 200
+    
+    internal static func map(_ data: Data, from response: HTTPURLResponse) throws -> [Movie] {
+        guard response.statusCode == OK_200, let root = try? Utils.jsonDecoder.decode(Root.self, from: data) else {
+            throw MovieServiceProvider.Error.invalidData
+        }
+        return root.results
     }
 }
