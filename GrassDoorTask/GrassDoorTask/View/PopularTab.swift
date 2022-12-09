@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PopularTab: View {
     var body: some View {
-        Text("Hello, Popular!")
+        MoviesView()
     }
 }
 

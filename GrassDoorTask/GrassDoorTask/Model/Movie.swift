@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Movie: Decodable {
+struct Movie: Decodable, Identifiable {
     let id: Int
     let title: String
     let overview: String
@@ -16,4 +16,5 @@ struct Movie: Decodable {
     let releaseDate: String
     let runTime: Int?
     let voteCount: Int
+    let voteAverage: Double?
 }

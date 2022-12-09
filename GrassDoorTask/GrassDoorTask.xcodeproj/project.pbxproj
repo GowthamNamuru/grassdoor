@@ -27,6 +27,13 @@
 		D434534E2943A749003DAD95 /* PopularTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D434534D2943A749003DAD95 /* PopularTab.swift */; };
 		D43453502943A8D4003DAD95 /* HomeTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D434534F2943A8D4003DAD95 /* HomeTab.swift */; };
 		D43453522943A97A003DAD95 /* TopRated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43453512943A97A003DAD95 /* TopRated.swift */; };
+		D43453542943ABFD003DAD95 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43453532943ABFD003DAD95 /* MovieViewModel.swift */; };
+		D43453562943AF47003DAD95 /* MovieServiceDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43453552943AF47003DAD95 /* MovieServiceDownloader.swift */; };
+		D43453582943B10C003DAD95 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43453572943B10C003DAD95 /* ImageDownloader.swift */; };
+		D434535A2943B379003DAD95 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43453592943B379003DAD95 /* ImageCache.swift */; };
+		D434535C2943B912003DAD95 /* EnvironmentValues+ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D434535B2943B912003DAD95 /* EnvironmentValues+ImageCache.swift */; };
+		D434535E2943B9C6003DAD95 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D434535D2943B9C6003DAD95 /* AsyncImage.swift */; };
+		D43453622943BD9A003DAD95 /* MoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43453612943BD9A003DAD95 /* MoviesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +78,13 @@
 		D434534D2943A749003DAD95 /* PopularTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTab.swift; sourceTree = "<group>"; };
 		D434534F2943A8D4003DAD95 /* HomeTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTab.swift; sourceTree = "<group>"; };
 		D43453512943A97A003DAD95 /* TopRated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRated.swift; sourceTree = "<group>"; };
+		D43453532943ABFD003DAD95 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		D43453552943AF47003DAD95 /* MovieServiceDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServiceDownloader.swift; sourceTree = "<group>"; };
+		D43453572943B10C003DAD95 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		D43453592943B379003DAD95 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		D434535B2943B912003DAD95 /* EnvironmentValues+ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+ImageCache.swift"; sourceTree = "<group>"; };
+		D434535D2943B9C6003DAD95 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		D43453612943BD9A003DAD95 /* MoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +181,8 @@
 				D434534D2943A749003DAD95 /* PopularTab.swift */,
 				D434534F2943A8D4003DAD95 /* HomeTab.swift */,
 				D43453512943A97A003DAD95 /* TopRated.swift */,
+				D434535D2943B9C6003DAD95 /* AsyncImage.swift */,
+				D43453612943BD9A003DAD95 /* MoviesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				D4259B742943714000D2E65B /* Movie.swift */,
+				D43453532943ABFD003DAD95 /* MovieViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,6 +212,7 @@
 				D4259B792943777B00D2E65B /* MovieService.swift */,
 				D4259B7B2943778E00D2E65B /* MovieEndPoint.swift */,
 				D4259B7D294378C800D2E65B /* MovieServiceProvider.swift */,
+				D43453552943AF47003DAD95 /* MovieServiceDownloader.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -212,6 +230,9 @@
 			isa = PBXGroup;
 			children = (
 				D4259B8629437E7F00D2E65B /* Utils.swift */,
+				D43453572943B10C003DAD95 /* ImageDownloader.swift */,
+				D43453592943B379003DAD95 /* ImageCache.swift */,
+				D434535B2943B912003DAD95 /* EnvironmentValues+ImageCache.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -347,17 +368,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D434535E2943B9C6003DAD95 /* AsyncImage.swift in Sources */,
 				D4259B7E294378C800D2E65B /* MovieServiceProvider.swift in Sources */,
 				D4259B462943635F00D2E65B /* Persistence.swift in Sources */,
 				D4259B752943714000D2E65B /* Movie.swift in Sources */,
+				D43453622943BD9A003DAD95 /* MoviesView.swift in Sources */,
 				D43453502943A8D4003DAD95 /* HomeTab.swift in Sources */,
 				D4259B492943635F00D2E65B /* GrassDoorTask.xcdatamodeld in Sources */,
 				D4259B3F2943635600D2E65B /* ContentView.swift in Sources */,
 				D43453522943A97A003DAD95 /* TopRated.swift in Sources */,
+				D43453562943AF47003DAD95 /* MovieServiceDownloader.swift in Sources */,
 				D4259B8429437CFC00D2E65B /* HTTPClient.swift in Sources */,
 				D4259B8729437E7F00D2E65B /* Utils.swift in Sources */,
+				D434535C2943B912003DAD95 /* EnvironmentValues+ImageCache.swift in Sources */,
+				D43453582943B10C003DAD95 /* ImageDownloader.swift in Sources */,
 				D4259B3D2943635600D2E65B /* GrassDoorTaskApp.swift in Sources */,
+				D434535A2943B379003DAD95 /* ImageCache.swift in Sources */,
 				D4259B7A2943777B00D2E65B /* MovieService.swift in Sources */,
+				D43453542943ABFD003DAD95 /* MovieViewModel.swift in Sources */,
 				D434534E2943A749003DAD95 /* PopularTab.swift in Sources */,
 				D4259B7C2943778E00D2E65B /* MovieEndPoint.swift in Sources */,
 				D434534A29439F4E003DAD95 /* URLSessionHTTPClient.swift in Sources */,
