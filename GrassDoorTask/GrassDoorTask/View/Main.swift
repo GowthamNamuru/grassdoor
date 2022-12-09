@@ -12,7 +12,7 @@ struct Main: View {
         TabView {
             ContentView(title: "Popular")
                 .tabItem {
-                    Label("Popular", systemImage: "list.dash")
+                    Label("Popular", systemImage: "list.star")
                 }
             
             ContentView(title: "Top Rated")
