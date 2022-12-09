@@ -18,6 +18,8 @@
 		D4259B5F2943636000D2E65B /* GrassDoorTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B5E2943636000D2E65B /* GrassDoorTaskUITestsLaunchTests.swift */; };
 		D4259B7229436D0900D2E65B /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B7129436D0900D2E65B /* Main.swift */; };
 		D4259B752943714000D2E65B /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B742943714000D2E65B /* Movie.swift */; };
+		D4259B7A2943777B00D2E65B /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B792943777B00D2E65B /* MovieService.swift */; };
+		D4259B7C2943778E00D2E65B /* MovieEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4259B7B2943778E00D2E65B /* MovieEndPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		D4259B5E2943636000D2E65B /* GrassDoorTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrassDoorTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D4259B7129436D0900D2E65B /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		D4259B742943714000D2E65B /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		D4259B792943777B00D2E65B /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		D4259B7B2943778E00D2E65B /* MovieEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEndPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 		D4259B3B2943635600D2E65B /* GrassDoorTask */ = {
 			isa = PBXGroup;
 			children = (
+				D4259B782943776900D2E65B /* Service */,
 				D4259B732943712F00D2E65B /* Model */,
 				D4259B7029436C3300D2E65B /* Storage */,
 				D4259B6F29436C1200D2E65B /* View */,
@@ -161,6 +166,15 @@
 				D4259B742943714000D2E65B /* Movie.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D4259B782943776900D2E65B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D4259B792943777B00D2E65B /* MovieService.swift */,
+				D4259B7B2943778E00D2E65B /* MovieEndPoint.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +313,8 @@
 				D4259B492943635F00D2E65B /* GrassDoorTask.xcdatamodeld in Sources */,
 				D4259B3F2943635600D2E65B /* ContentView.swift in Sources */,
 				D4259B3D2943635600D2E65B /* GrassDoorTaskApp.swift in Sources */,
+				D4259B7A2943777B00D2E65B /* MovieService.swift in Sources */,
+				D4259B7C2943778E00D2E65B /* MovieEndPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
