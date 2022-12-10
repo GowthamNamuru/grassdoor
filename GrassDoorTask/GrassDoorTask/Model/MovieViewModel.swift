@@ -16,6 +16,10 @@ struct MovieViewModel {
     private(set) var votingAverage: Double = 0.0
     private(set) var releaseDate: String = ""
     
+    var imageName: String {
+        title.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() + "\(movie.id)"
+    }
+    
     init(movie: Movie) {
         self.movie = movie
         title = movie.title

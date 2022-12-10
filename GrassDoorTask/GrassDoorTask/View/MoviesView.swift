@@ -14,11 +14,12 @@ struct MoviesView: View {
         case topRated
     }
     var selectedTab: Tab
+
     var body: some View {
         VStack {
             List {
                 ForEach(movieManager.movies) { movie in
-                    NavigationLink(destination: Text(movie.title)) {
+                    NavigationLink(destination: MovieDetailView(movie: MovieViewModel(movie: movie))) {
                         MovieCell(movie: MovieViewModel(movie: movie))
                     }
                     .listRowBackground(Color.clear)

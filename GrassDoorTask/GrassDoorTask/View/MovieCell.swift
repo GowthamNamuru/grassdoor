@@ -31,7 +31,7 @@ struct MovieCell: View {
     }
     
     private var moviePoster: some View {
-        AsyncImage(url: URL(string: movie.posterPath)!) {
+        AsyncImage(imageName: movie.imageName, url: URL(string: movie.posterPath)!) {
             Rectangle().foregroundColor(Color.gray.opacity(0.4))
         } image: { image in
             Image(uiImage: image)

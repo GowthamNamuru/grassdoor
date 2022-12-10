@@ -16,13 +16,15 @@ final class ImageDownloader: ObservableObject {
     private let url: URL
     private var cancellable: AnyCancellable?
     private var cache: ImageCache?
-    
+    private var imageStore: ImageStore = LocalImageStore.shared
+    private var imageName: String
     
     private static let imageQueue = DispatchQueue(label: "imageDownloader")
     
-    init(url: URL, cache: ImageCache? = nil) {
+    init(imageName: String, url: URL, cache: ImageCache? = nil) {
         self.url = url
         self.cache = cache
+        self.imageName = imageName
     }
     
     
@@ -30,7 +32,7 @@ final class ImageDownloader: ObservableObject {
         guard !isLoading else {
             return
         }
-        if let image = cache?[url] {
+        if let image = imageStore.retrieve(imageName) {
             self.image = image
             return
         }
@@ -49,6 +51,7 @@ final class ImageDownloader: ObservableObject {
     
     
     private func onStart() {
+        print("Download started for \(imageName)")
         isLoading = true
     }
     
@@ -57,7 +60,9 @@ final class ImageDownloader: ObservableObject {
     }
     
     private func updateCache(_ tempImage: UIImage?) {
-        cache?[url] = tempImage
+        imageStore.insert(imageName, tempImage) { error in
+            print("Failed to store after downloading with \(error)")
+        }
     }
     
     deinit {
