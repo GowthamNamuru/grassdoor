@@ -18,9 +18,9 @@ struct MoviesView: View {
     var body: some View {
         VStack {
             List {
-                ForEach(movieManager.movies) { movie in
-                    NavigationLink(destination: MovieDetailView(movie: MovieViewModel(movie: movie))) {
-                        MovieCell(movie: MovieViewModel(movie: movie))
+                ForEach(movieManager.movies) { movieViewModel in
+                    NavigationLink(destination: MovieDetailView(movie: movieViewModel)) {
+                        MovieCell(movie: movieViewModel)
                     }
                     .listRowBackground(Color.clear)
                 }

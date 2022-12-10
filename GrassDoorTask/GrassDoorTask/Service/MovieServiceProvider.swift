@@ -56,10 +56,10 @@ final class MovieResultMapper {
     
     private static let OK_200 = 200
     
-    internal static func map(_ data: Data, from response: HTTPURLResponse) throws -> [Movie] {
+    internal static func map(_ data: Data, from response: HTTPURLResponse) throws -> [MovieViewModel] {
         guard response.statusCode == OK_200, let root = try? Utils.jsonDecoder.decode(Root.self, from: data) else {
             throw MovieServiceProvider.Error.invalidData
         }
-        return root.results
+        return root.results.map({ MovieViewModel.init(movie: $0) })
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 final class MovieServiceDownloader: ObservableObject {
-    @Published var movies = [Movie]()
+    @Published var movies = [MovieViewModel]()
     
     private var serviceProvider = MovieServiceProvider(client: URLSessionHTTPClient(session: URLSession.shared))
     
@@ -28,9 +28,9 @@ final class MovieServiceDownloader: ObservableObject {
                 case let .success(movies):
                     self.movies = movies
                     let type = (endPoint == .popular) ? MovieType.popular : MovieType.topRated
-                    LocalMovieStore.shared.insert(movies, type: type, completion: { error in
+                    LocalMovieStore.shared.insert(movies.toModels(), type: type, completion: { error in
                         if let error = error {
-                            print("Failed to save on core data for \(type.rawValue) with error")
+                            print("Failed to save on core data for \(type.rawValue) with error \(error)")
                         }
                     })
                 case .failure:
@@ -42,12 +42,9 @@ final class MovieServiceDownloader: ObservableObject {
     
     private func loadFromLocalDB(type: String) {
         LocalMovieStore.shared.retrieveMovies(for: type, completion: { movieViewModel in
-            let tempMovies = movieViewModel?.reduce([Movie](), { partialResult, model in
-                var temp = partialResult
-                temp.append(model.movie)
-                return temp
-            })
-            self.movies = tempMovies ?? []
+            if let movieModel = movieViewModel {
+                self.movies = movieModel
+            }
         })
     }
 }

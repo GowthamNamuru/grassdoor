@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct MovieViewModel {
-    
+struct MovieViewModel: Identifiable {
     private(set) var movie: Movie
-    
+    var id: Int {
+        movie.id
+    }
     private(set) var title: String
     private(set) var posterPath: String = ""
     private(set) var votingAverage: Double = 0.0
@@ -32,5 +33,11 @@ struct MovieViewModel {
             votingAverage = vAverage
         }
         releaseDate = movie.releaseDate
+    }
+}
+
+extension Array where Element == MovieViewModel {
+    func toModels() -> [Movie] {
+        return map({ $0.movie })
     }
 }

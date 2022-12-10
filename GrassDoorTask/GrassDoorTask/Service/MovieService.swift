@@ -8,7 +8,7 @@
 import Foundation
 
 enum LoadMovieResult {
-    case success([Movie])
+    case success([MovieViewModel])
     case failure(Error)
 }
 
