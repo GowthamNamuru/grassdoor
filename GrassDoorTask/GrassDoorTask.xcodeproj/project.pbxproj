@@ -40,6 +40,10 @@
 		D46F75D32944395300CC4369 /* Poster.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F75D22944395300CC4369 /* Poster.swift */; };
 		D46F75D529443A2600CC4369 /* PosterCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F75D429443A2600CC4369 /* PosterCoreDataManager.swift */; };
 		D46F75D729443F0300CC4369 /* UIImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F75D629443F0300CC4369 /* UIImageTransformer.swift */; };
+		D46F75DB2944495500CC4369 /* MovieFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F75DA2944495500CC4369 /* MovieFeedStore.swift */; };
+		D46F75DD29444ACC00CC4369 /* LocalMovieStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F75DC29444ACC00CC4369 /* LocalMovieStore.swift */; };
+		D46F75DF29444E3D00CC4369 /* ManagedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F75DE29444E3D00CC4369 /* ManagedCache.swift */; };
+		D46F75E129444EF400CC4369 /* ManagedMovieFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F75E029444EF400CC4369 /* ManagedMovieFeed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,10 @@
 		D46F75D22944395300CC4369 /* Poster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poster.swift; sourceTree = "<group>"; };
 		D46F75D429443A2600CC4369 /* PosterCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCoreDataManager.swift; sourceTree = "<group>"; };
 		D46F75D629443F0300CC4369 /* UIImageTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageTransformer.swift; sourceTree = "<group>"; };
+		D46F75DA2944495500CC4369 /* MovieFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFeedStore.swift; sourceTree = "<group>"; };
+		D46F75DC29444ACC00CC4369 /* LocalMovieStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMovieStore.swift; sourceTree = "<group>"; };
+		D46F75DE29444E3D00CC4369 /* ManagedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedCache.swift; sourceTree = "<group>"; };
+		D46F75E029444EF400CC4369 /* ManagedMovieFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedMovieFeed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,9 +212,8 @@
 		D4259B7029436C3300D2E65B /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				D46F75D92944493300CC4369 /* MovieStorage */,
 				D46F75D8294446F000CC4369 /* ImageStorage */,
-				D4259B452943635F00D2E65B /* Persistence.swift */,
-				D4259B472943635F00D2E65B /* GrassDoorTask.xcdatamodeld */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -261,6 +268,19 @@
 				D46F75D429443A2600CC4369 /* PosterCoreDataManager.swift */,
 			);
 			path = ImageStorage;
+			sourceTree = "<group>";
+		};
+		D46F75D92944493300CC4369 /* MovieStorage */ = {
+			isa = PBXGroup;
+			children = (
+				D46F75DE29444E3D00CC4369 /* ManagedCache.swift */,
+				D4259B452943635F00D2E65B /* Persistence.swift */,
+				D4259B472943635F00D2E65B /* GrassDoorTask.xcdatamodeld */,
+				D46F75DA2944495500CC4369 /* MovieFeedStore.swift */,
+				D46F75DC29444ACC00CC4369 /* LocalMovieStore.swift */,
+				D46F75E029444EF400CC4369 /* ManagedMovieFeed.swift */,
+			);
+			path = MovieStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,7 +414,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D46F75DF29444E3D00CC4369 /* ManagedCache.swift in Sources */,
+				D46F75DB2944495500CC4369 /* MovieFeedStore.swift in Sources */,
 				D434535E2943B9C6003DAD95 /* AsyncImage.swift in Sources */,
+				D46F75E129444EF400CC4369 /* ManagedMovieFeed.swift in Sources */,
 				D4259B7E294378C800D2E65B /* MovieServiceProvider.swift in Sources */,
 				D4259B462943635F00D2E65B /* Persistence.swift in Sources */,
 				D4259B752943714000D2E65B /* Movie.swift in Sources */,
@@ -416,6 +439,7 @@
 				D4259B7A2943777B00D2E65B /* MovieService.swift in Sources */,
 				D43453542943ABFD003DAD95 /* MovieViewModel.swift in Sources */,
 				D434534E2943A749003DAD95 /* PopularTab.swift in Sources */,
+				D46F75DD29444ACC00CC4369 /* LocalMovieStore.swift in Sources */,
 				D43453662943CC63003DAD95 /* MovieDetailView.swift in Sources */,
 				D4259B7C2943778E00D2E65B /* MovieEndPoint.swift in Sources */,
 				D46F75D529443A2600CC4369 /* PosterCoreDataManager.swift in Sources */,
