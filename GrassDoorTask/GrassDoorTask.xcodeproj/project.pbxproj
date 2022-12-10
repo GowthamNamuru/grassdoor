@@ -204,11 +204,9 @@
 		D4259B7029436C3300D2E65B /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				D46F75D8294446F000CC4369 /* ImageStorage */,
 				D4259B452943635F00D2E65B /* Persistence.swift */,
 				D4259B472943635F00D2E65B /* GrassDoorTask.xcdatamodeld */,
-				D46F75CF2944385400CC4369 /* Posters.xcdatamodeld */,
-				D46F75D22944395300CC4369 /* Poster.swift */,
-				D46F75D429443A2600CC4369 /* PosterCoreDataManager.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -248,11 +246,21 @@
 			children = (
 				D4259B8629437E7F00D2E65B /* Utils.swift */,
 				D43453572943B10C003DAD95 /* ImageDownloader.swift */,
-				D43453592943B379003DAD95 /* ImageCache.swift */,
-				D46F75CD2944296E00CC4369 /* ImageStore.swift */,
 				D46F75D629443F0300CC4369 /* UIImageTransformer.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D46F75D8294446F000CC4369 /* ImageStorage */ = {
+			isa = PBXGroup;
+			children = (
+				D43453592943B379003DAD95 /* ImageCache.swift */,
+				D46F75CD2944296E00CC4369 /* ImageStore.swift */,
+				D46F75CF2944385400CC4369 /* Posters.xcdatamodeld */,
+				D46F75D22944395300CC4369 /* Poster.swift */,
+				D46F75D429443A2600CC4369 /* PosterCoreDataManager.swift */,
+			);
+			path = ImageStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
