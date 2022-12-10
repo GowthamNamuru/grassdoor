@@ -15,15 +15,13 @@ final class ImageDownloader: ObservableObject {
     
     private let url: URL
     private var cancellable: AnyCancellable?
-    private var cache: ImageCache?
     private var imageStore: ImageStore = LocalImageStore.shared
     private var imageName: String
     
     private static let imageQueue = DispatchQueue(label: "imageDownloader")
     
-    init(imageName: String, url: URL, cache: ImageCache? = nil) {
+    init(imageName: String, url: URL) {
         self.url = url
-        self.cache = cache
         self.imageName = imageName
     }
     

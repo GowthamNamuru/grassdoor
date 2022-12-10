@@ -19,7 +19,7 @@ struct MovieDetailView: View {
         movieViewModel = movie
         let url = URL(string: movieViewModel.posterPath)!
         let imageName = movieViewModel.imageName
-        _loader = StateObject(wrappedValue: ImageDownloader(imageName: imageName, url: url, cache: Environment(\.imageCache).wrappedValue))
+        _loader = StateObject(wrappedValue: ImageDownloader(imageName: imageName, url: url))
     }
     
     var body: some View {
