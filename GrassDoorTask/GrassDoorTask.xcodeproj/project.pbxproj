@@ -46,6 +46,7 @@
 		D46F75E72944667900CC4369 /* PopularTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F75E62944667900CC4369 /* PopularTab.swift */; };
 		D46F75E9294466B600CC4369 /* TopRatedMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F75E8294466B600CC4369 /* TopRatedMovieView.swift */; };
 		D46F75EE2944937100CC4369 /* CodableReviewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F75ED2944937100CC4369 /* CodableReviewStore.swift */; };
+		D46F75F32944AAF200CC4369 /* YoutubePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F75F22944AAF200CC4369 /* YoutubePlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		D46F75E62944667900CC4369 /* PopularTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularTab.swift; sourceTree = "<group>"; };
 		D46F75E8294466B600CC4369 /* TopRatedMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedMovieView.swift; sourceTree = "<group>"; };
 		D46F75ED2944937100CC4369 /* CodableReviewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableReviewStore.swift; sourceTree = "<group>"; };
+		D46F75F22944AAF200CC4369 /* YoutubePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 				D43453632943C2C3003DAD95 /* MovieCell.swift */,
 				D43453652943CC63003DAD95 /* MovieDetailView.swift */,
 				D46F75E8294466B600CC4369 /* TopRatedMovieView.swift */,
+				D46F75F22944AAF200CC4369 /* YoutubePlayerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,6 +316,8 @@
 			dependencies = (
 			);
 			name = GrassDoorTask;
+			packageProductDependencies = (
+			);
 			productName = GrassDoorTask;
 			productReference = D4259B392943635600D2E65B /* GrassDoorTask.app */;
 			productType = "com.apple.product-type.application";
@@ -386,6 +391,8 @@
 				Base,
 			);
 			mainGroup = D4259B302943635600D2E65B;
+			packageReferences = (
+			);
 			productRefGroup = D4259B3A2943635600D2E65B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -428,6 +435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D46F75F32944AAF200CC4369 /* YoutubePlayerView.swift in Sources */,
 				D46F75DF29444E3D00CC4369 /* ManagedCache.swift in Sources */,
 				D46F75DB2944495500CC4369 /* MovieFeedStore.swift in Sources */,
 				D434535E2943B9C6003DAD95 /* AsyncImage.swift in Sources */,

@@ -38,6 +38,7 @@ struct MovieDetailView: View {
                     moviePosterView
                     movieOverview
                     addReview
+                    trailersView
                 }
                 .padding(.top, 84)
                 .padding(.horizontal, 32)
@@ -97,30 +98,21 @@ struct MovieDetailView: View {
             .padding(.top, 16)
     }
     
-//    private var trailersView: some View {
-//        ZStack {
-//            ScrollView(showsIndicators: false) {
-//                VStack {
-//                    Text("Trailers")
-//                        .font(.title)
-//                    List {
-//                        ForEach(movieService.trailers) { trailer in
-//                            NavigationLink {
-////                                YouTubeView(videoTrailer: trailer)
-////                                    .frame(width: 300, height: 300)
-////                                    .padding()
-//                            } label: {
-//                                Text(trailer.name)
-//                                    .padding()
-//                                    .font(.caption)
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//
-//        }
-//    }
+    private var trailersView: some View {
+        VStack(alignment: .center) {
+            Spacer()
+            Text("Trailers")
+                .font(.title)
+            ForEach(movieService.trailers) { trailer in
+                NavigationLink {
+                    VideoPlayer(trailer: trailer)
+                } label: {
+                    Text(trailer.name)
+                        .foregroundColor(.orange)
+                }
+            }
+        }
+    }
     
     private var addReview: some View {
         VStack {
@@ -131,6 +123,7 @@ struct MovieDetailView: View {
                 .backgroundStyle(Color.white)
             
             Spacer()
+            
             Button("Have you watched movie") {
                 presentAlert = true
             }
@@ -139,14 +132,12 @@ struct MovieDetailView: View {
                 Button("Add Review", role: .destructive, action: {
                     
                     codableStore.insert(Review(id: "\(movieViewModel.id)", reviews: userReview)) { error in
-                        
                     }
                     
                     codableStore.retrieveReview()
                 })
                 
                 Button("Ok", role: .cancel, action: {
-                    
                 })
             }, message: {
                 Text("Add review.")
@@ -155,16 +146,4 @@ struct MovieDetailView: View {
         }
     }
     
-}
-
-struct YouTubeView: UIViewRepresentable {
-    let videoTrailer: Trailers
-    func makeUIView(context: Context) ->  WKWebView {
-        return WKWebView()
-    }
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        guard let demoURL = URL(string: "https://www.youtube.com/embed/\(videoTrailer.key)") else { return }
-        uiView.scrollView.isScrollEnabled = false
-        uiView.load(URLRequest(url: demoURL))
-    }
 }
