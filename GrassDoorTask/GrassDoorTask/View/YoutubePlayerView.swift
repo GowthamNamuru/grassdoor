@@ -19,13 +19,16 @@ struct VideoPlayer: View {
 }
 
 struct YouTubeView: UIViewRepresentable {
+    private var url: URL {
+        return URL(string: "https://www.youtube.com/embed/\(videoTrailer.key)")!
+    }
     let videoTrailer: Trailers
     func makeUIView(context: Context) ->  WKWebView {
-        return WKWebView()
+        let webView = WKWebView()
+        let request = URLRequest(url: url)
+        webView.load(request)
+        return webView
     }
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        guard let demoURL = URL(string: "https://www.youtube.com/embed/\(videoTrailer.key)") else { return }
-        uiView.scrollView.isScrollEnabled = false
-        uiView.load(URLRequest(url: demoURL))
     }
 }
