@@ -10,24 +10,7 @@ import SwiftUI
 struct TopRatedMovieView: View {
     @ObservedObject var movieManager = MovieServiceDownloader(type: .topRated)
     var body: some View {
-        VStack {
-            List {
-                ForEach(movieManager.movies) { movieViewModel in
-                    NavigationLink(destination: MovieDetailView(movie: movieViewModel)) {
-                        MovieCell(movie: movieViewModel)
-                            .onAppear {
-                                movieManager.getNextPageOfMovie(currentItem: movieViewModel)
-                            }
-                    }
-                    .listRowBackground(Color.clear)
-                }
-            }
-            .onAppear{
-                movieManager.getMovies()
-            }
-            
-            Spacer()
-        }
+        MoviesView(movieManager: movieManager)
     }
 }
 

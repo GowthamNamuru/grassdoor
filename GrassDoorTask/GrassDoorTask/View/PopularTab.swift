@@ -10,6 +10,7 @@ import SwiftUI
 struct PopularTab: View {
     var body: some View {
         PopularMoviesView()
+        
     }
 }
 

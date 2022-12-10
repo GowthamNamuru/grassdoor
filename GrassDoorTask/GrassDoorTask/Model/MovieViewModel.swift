@@ -32,7 +32,7 @@ struct MovieViewModel: Identifiable {
             let vAverage = average / 10.0
             votingAverage = vAverage
         }
-        releaseDate = movie.releaseDate
+        releaseDate = Utils.dateString(from: movie.releaseDate)
     }
 }
 

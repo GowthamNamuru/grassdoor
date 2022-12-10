@@ -10,6 +10,21 @@ import SwiftUI
 struct PopularMoviesView: View {
     @ObservedObject var movieManager = MovieServiceDownloader(type: .popular)
     var body: some View {
+        MoviesView(movieManager: movieManager)
+    }
+}
+
+struct MoviesView_Previews: PreviewProvider {
+    static var previews: some View {
+        PopularMoviesView()
+    }
+}
+
+
+struct MoviesView: View {
+    @ObservedObject var movieManager: MovieServiceDownloader
+    
+    var body: some View {
         VStack {
             List {
                 ForEach(movieManager.movies, id: \.movie.id) { movieViewModel in
@@ -25,14 +40,11 @@ struct PopularMoviesView: View {
             .onAppear{
                 movieManager.getMovies()
             }
+            .refreshable {
+                movieManager.getMovies()
+            }
             
             Spacer()
         }
-    }
-}
-
-struct MoviesView_Previews: PreviewProvider {
-    static var previews: some View {
-        PopularMoviesView()
     }
 }

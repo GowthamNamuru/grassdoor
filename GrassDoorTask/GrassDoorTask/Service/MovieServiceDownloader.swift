@@ -84,3 +84,9 @@ final class MovieServiceDownloader: ObservableObject {
         })
     }
 }
+
+struct MainThread {
+    static func perform(_ task: @escaping () -> Void) {
+        Thread.isMainThread ? task() : DispatchQueue.main.async(execute: task)
+    }
+}

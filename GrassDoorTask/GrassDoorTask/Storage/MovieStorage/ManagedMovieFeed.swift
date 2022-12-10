@@ -1,6 +1,6 @@
 //
 //  ManagedMovieFeed.swift
-//  GrassDoorTask
+//  GrassDoorTas
 //
 //  Created by Gowtham Namuri on 10/12/22.
 //
@@ -18,7 +18,7 @@ class ManagedMovieFeed: NSManagedObject {
     @NSManaged public var id: Int32
     @NSManaged public var overview: String?
     @NSManaged public var posterPath: String?
-    @NSManaged public var releaseDate: String?
+    @NSManaged public var releaseDate: Date?
     @NSManaged public var runTime: Int32
     @NSManaged public var title: String?
     @NSManaged public var type: String?
@@ -47,6 +47,6 @@ extension ManagedMovieFeed : Identifiable {
     }
     
     var local: MovieViewModel {
-        return MovieViewModel(movie: Movie(id: Int(id), title: title ?? "", overview: overview ?? "", posterPath: posterPath, backdropPath: backdropPath, releaseDate: releaseDate ?? "", runTime: Int(runTime), voteCount: Int(voteCount), voteAverage: voteAverage))
+        return MovieViewModel(movie: Movie(id: Int(id), title: title ?? "", overview: overview ?? "", posterPath: posterPath, backdropPath: backdropPath, releaseDate: releaseDate ?? Date(), runTime: Int(runTime), voteCount: Int(voteCount), voteAverage: voteAverage))
     }
 }
