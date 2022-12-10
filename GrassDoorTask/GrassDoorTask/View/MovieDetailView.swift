@@ -10,7 +10,7 @@ import SwiftUI
 struct MovieDetailView: View {
     
     @StateObject private var loader: ImageDownloader
-    @ObservedObject private var movieService = MovieServiceDownloader()
+//    @ObservedObject private var movieService = MovieServiceDownloader()
     
     var movieViewModel: MovieViewModel
     

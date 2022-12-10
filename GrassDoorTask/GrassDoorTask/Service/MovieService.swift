@@ -13,5 +13,5 @@ enum LoadMovieResult {
 }
 
 protocol MovieService {
-    func fetchMovies(endPoint: MovieEndPoint, completionHandler: @escaping (LoadMovieResult) -> ())
+    func fetchMovies(endPoint: MovieEndPoint, params: [String: String]?, completionHandler: @escaping (LoadMovieResult) -> ())
 }

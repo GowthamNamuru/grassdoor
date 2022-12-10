@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TopRated: View {
     var body: some View {
-        MoviesView(selectedTab: .topRated)
+        TopRatedMovieView()
     }
 }
 

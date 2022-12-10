@@ -21,11 +21,11 @@ final class MovieServiceProvider: MovieService {
         case invalidData
     }
 
-    func fetchMovies(endPoint: MovieEndPoint, completionHandler: @escaping (LoadMovieResult) -> ()) {
+    func fetchMovies(endPoint: MovieEndPoint, params: [String: String]?, completionHandler: @escaping (LoadMovieResult) -> ()) {
         guard let url = endPoint.url else {
             return
         }
-        client.get(from: url, params: [:]) { [weak self] result in
+        client.get(from: url, params: params) { [weak self] result in
             guard self != nil else {
                 return
             }

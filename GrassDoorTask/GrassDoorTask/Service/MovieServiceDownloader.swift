@@ -12,27 +12,63 @@ final class MovieServiceDownloader: ObservableObject {
     
     private var serviceProvider = MovieServiceProvider(client: URLSessionHTTPClient(session: URLSession.shared))
     
-    func getPopular() {
-        getMovies(endPoint: .popular)
+    private var pageCount = 1
+    private var totalPages = 10
+    
+    private var type: MovieType
+    
+    init(type: MovieType) {
+        self.type = type
     }
     
-    func getTopRated() {
-        getMovies(endPoint: .topRated)
+    func getMovies() {
+        switch type {
+        case .topRated:
+            getTopRated()
+        case .popular:
+            getPopular()
+        }
     }
     
-    func getMovies(endPoint: MovieEndPoint) {
-        serviceProvider.fetchMovies(endPoint: endPoint) { [weak self] result in
+    private func getPopular() {
+        getMovies(endPoint: .popular, pageCount: pageCount)
+    }
+    
+    private func getTopRated() {
+        getMovies(endPoint: .topRated, pageCount: pageCount)
+    }
+    
+    func getNextPageOfMovie(currentItem: MovieViewModel) {
+        let thresholdIndex = self.movies.last?.id
+        if thresholdIndex == currentItem.id, (pageCount + 1) <= totalPages {
+            pageCount += 1
+            let endPoint = (type == .popular) ? MovieEndPoint.popular : MovieEndPoint.topRated
+            getMovies(endPoint: endPoint, pageCount: pageCount)
+        }
+    }
+    
+    
+    func getMovies(endPoint: MovieEndPoint, pageCount: Int) {
+        let params = ["page": "\(pageCount)"]
+        serviceProvider.fetchMovies(endPoint: endPoint, params: params) { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 switch result {
                 case let .success(movies):
-                    self.movies = movies
-                    let type = (endPoint == .popular) ? MovieType.popular : MovieType.topRated
-                    LocalMovieStore.shared.insert(movies.toModels(), type: type, completion: { error in
-                        if let error = error {
-                            print("Failed to save on core data for \(type.rawValue) with error \(error)")
-                        }
-                    })
+                    if pageCount != 1 {
+                        self.movies.append(contentsOf: movies)
+                    } else {
+                        self.movies = movies
+                        
+                        /// Store one page of data on the local db
+                        let type = (endPoint == .popular) ? MovieType.popular : MovieType.topRated
+                        LocalMovieStore.shared.insert(movies.toModels(), type: type, completion: { error in
+                            if let error = error {
+                                print("Failed to save on core data for \(type.rawValue) with error \(error)")
+                            }
+                        })
+
+                    }
                 case .failure:
                     self.loadFromLocalDB(type: endPoint == .popular ? "popular" : "topRated")
                 }

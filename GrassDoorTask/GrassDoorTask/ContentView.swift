@@ -13,8 +13,8 @@ struct ContentView: View {
             Group {
                 HomeTab()
             }
-            .navigationBarTitle("Movies", displayMode: .automatic)
         }
+        .navigationBarTitle("Movies", displayMode: .automatic)
         
     }
 }

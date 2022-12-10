@@ -7,31 +7,23 @@
 
 import SwiftUI
 
-struct MoviesView: View {
-    @ObservedObject var movieManager = MovieServiceDownloader()
-    enum Tab: Int {
-        case popular
-        case topRated
-    }
-    var selectedTab: Tab
-
+struct PopularMoviesView: View {
+    @ObservedObject var movieManager = MovieServiceDownloader(type: .popular)
     var body: some View {
         VStack {
             List {
-                ForEach(movieManager.movies) { movieViewModel in
+                ForEach(movieManager.movies, id: \.movie.id) { movieViewModel in
                     NavigationLink(destination: MovieDetailView(movie: movieViewModel)) {
                         MovieCell(movie: movieViewModel)
+                            .onAppear {
+                                movieManager.getNextPageOfMovie(currentItem: movieViewModel)
+                            }
                     }
                     .listRowBackground(Color.clear)
                 }
             }
             .onAppear{
-                switch selectedTab {
-                case .topRated:
-                    movieManager.getTopRated()
-                case .popular:
-                    movieManager.getPopular()
-                }
+                movieManager.getMovies()
             }
             
             Spacer()
@@ -41,6 +33,6 @@ struct MoviesView: View {
 
 struct MoviesView_Previews: PreviewProvider {
     static var previews: some View {
-        MoviesView(selectedTab: .topRated)
+        PopularMoviesView()
     }
 }
