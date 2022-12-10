@@ -45,6 +45,7 @@
 		D46F75E129444EF400CC4369 /* ManagedMovieFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F75E029444EF400CC4369 /* ManagedMovieFeed.swift */; };
 		D46F75E72944667900CC4369 /* PopularTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F75E62944667900CC4369 /* PopularTab.swift */; };
 		D46F75E9294466B600CC4369 /* TopRatedMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F75E8294466B600CC4369 /* TopRatedMovieView.swift */; };
+		D46F75EE2944937100CC4369 /* CodableReviewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F75ED2944937100CC4369 /* CodableReviewStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		D46F75E029444EF400CC4369 /* ManagedMovieFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedMovieFeed.swift; sourceTree = "<group>"; };
 		D46F75E62944667900CC4369 /* PopularTab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularTab.swift; sourceTree = "<group>"; };
 		D46F75E8294466B600CC4369 /* TopRatedMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedMovieView.swift; sourceTree = "<group>"; };
+		D46F75ED2944937100CC4369 /* CodableReviewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableReviewStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 		D4259B7029436C3300D2E65B /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				D46F75EA294492C500CC4369 /* Review */,
 				D46F75D92944493300CC4369 /* MovieStorage */,
 				D46F75D8294446F000CC4369 /* ImageStorage */,
 			);
@@ -284,6 +287,14 @@
 				D46F75E029444EF400CC4369 /* ManagedMovieFeed.swift */,
 			);
 			path = MovieStorage;
+			sourceTree = "<group>";
+		};
+		D46F75EA294492C500CC4369 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				D46F75ED2944937100CC4369 /* CodableReviewStore.swift */,
+			);
+			path = Review;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +439,7 @@
 				D43453622943BD9A003DAD95 /* PopularMoviesView.swift in Sources */,
 				D43453502943A8D4003DAD95 /* HomeTab.swift in Sources */,
 				D46F75D32944395300CC4369 /* Poster.swift in Sources */,
+				D46F75EE2944937100CC4369 /* CodableReviewStore.swift in Sources */,
 				D4259B492943635F00D2E65B /* GrassDoorTask.xcdatamodeld in Sources */,
 				D4259B3F2943635600D2E65B /* ContentView.swift in Sources */,
 				D43453522943A97A003DAD95 /* TopRated.swift in Sources */,

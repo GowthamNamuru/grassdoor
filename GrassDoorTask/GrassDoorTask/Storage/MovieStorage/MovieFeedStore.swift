@@ -7,9 +7,21 @@
 
 import Foundation
 
-enum MovieType: String {
+enum MovieType {
     case topRated
     case popular
+    case movieTrailers(id: Int)
+    
+    var description: String {
+        switch self {
+        case .topRated:
+            return "topRated"
+        case .popular:
+            return "popular"
+        case .movieTrailers:
+            return ""
+        }
+    }
 }
 
 protocol MovieStore {
@@ -27,5 +39,5 @@ protocol MovieStore {
     
     /// The completion handler can be invoked in any thread.
     /// Clents are responsible to dispatch to appropiate thread, if needed.
-    func retrieveMovies(for type: String, completion: @escaping RetrievalCompletion)
+    func retrieveMovies(for type: MovieType, completion: @escaping RetrievalCompletion)
 }

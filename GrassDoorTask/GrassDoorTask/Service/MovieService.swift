@@ -12,6 +12,12 @@ enum LoadMovieResult {
     case failure(Error)
 }
 
+enum LoadTrailerResult {
+    case success([Trailers])
+    case failure(Error)
+}
+
 protocol MovieService {
     func fetchMovies(endPoint: MovieEndPoint, params: [String: String]?, completionHandler: @escaping (LoadMovieResult) -> ())
+    func fetchMovieTrailers(endPoint: MovieDetailsEndPoint, params: [String: String]?, completionHandler: @escaping (LoadTrailerResult) -> ())
 }

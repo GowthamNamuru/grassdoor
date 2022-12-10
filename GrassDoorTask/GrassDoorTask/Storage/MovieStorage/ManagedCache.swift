@@ -17,7 +17,7 @@ extension ManagedCache {
     static func find(in context: NSManagedObjectContext, type: MovieType) throws -> ManagedCache? {
         let request = NSFetchRequest<ManagedCache>(entityName: entity().name!)
         request.returnsObjectsAsFaults = false
-        request.predicate = NSPredicate(format: "name = %@", type.rawValue)
+        request.predicate = NSPredicate(format: "name = %@", type.description)
         return try context.fetch(request).first
     }
     

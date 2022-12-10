@@ -39,7 +39,7 @@ extension ManagedMovieFeed : Identifiable {
             managed.releaseDate = local.releaseDate
             managed.runTime = Int32(local.runTime ?? 0)
             managed.title = local.title
-            managed.type = type.rawValue
+            managed.type = type.description
             managed.voteAverage = local.voteAverage ?? 0
             managed.voteCount = Int32(local.voteCount)
             return managed

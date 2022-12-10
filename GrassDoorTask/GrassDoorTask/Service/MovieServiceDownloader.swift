@@ -9,6 +9,8 @@ import Foundation
 
 final class MovieServiceDownloader: ObservableObject {
     @Published var movies = [MovieViewModel]()
+    @Published var trailers = [Trailers]()
+    @Published var trailerFailed: String?
     
     private var serviceProvider = MovieServiceProvider(client: URLSessionHTTPClient(session: URLSession.shared))
     
@@ -27,6 +29,8 @@ final class MovieServiceDownloader: ObservableObject {
             getTopRated()
         case .popular:
             getPopular()
+        case let .movieTrailers(id):
+            fetchMovieTrailers(for: id)
         }
     }
     
@@ -42,11 +46,32 @@ final class MovieServiceDownloader: ObservableObject {
         let thresholdIndex = self.movies.last?.id
         if thresholdIndex == currentItem.id, (pageCount + 1) <= totalPages {
             pageCount += 1
-            let endPoint = (type == .popular) ? MovieEndPoint.popular : MovieEndPoint.topRated
-            getMovies(endPoint: endPoint, pageCount: pageCount)
+            switch type {
+            case .topRated:
+                getMovies(endPoint: .topRated, pageCount: pageCount)
+            case .popular:
+                getMovies(endPoint: .popular, pageCount: pageCount)
+            case .movieTrailers:
+                break
+            }
         }
     }
     
+    
+    func fetchMovieTrailers(for id: Int) {
+        serviceProvider.fetchMovieTrailers(endPoint: .trailers(id: id), params: [:]) { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case let .success(receivedTrailers):
+                    self.trailers = receivedTrailers
+                    self.trailerFailed = nil
+                case let .failure(error):
+                    self.trailerFailed = "Failed to load trailers"
+                }
+            }
+        }
+    }
     
     func getMovies(endPoint: MovieEndPoint, pageCount: Int) {
         let params = ["page": "\(pageCount)"]
@@ -64,19 +89,19 @@ final class MovieServiceDownloader: ObservableObject {
                         let type = (endPoint == .popular) ? MovieType.popular : MovieType.topRated
                         LocalMovieStore.shared.insert(movies.toModels(), type: type, completion: { error in
                             if let error = error {
-                                print("Failed to save on core data for \(type.rawValue) with error \(error)")
+                                print("Failed to save on core data for  with error \(error)")
                             }
                         })
 
                     }
                 case .failure:
-                    self.loadFromLocalDB(type: endPoint == .popular ? "popular" : "topRated")
+                    self.loadFromLocalDB(type: endPoint == .popular ? MovieType.popular : MovieType.topRated)
                 }
             }
         }
     }
     
-    private func loadFromLocalDB(type: String) {
+    private func loadFromLocalDB(type: MovieType) {
         LocalMovieStore.shared.retrieveMovies(for: type, completion: { movieViewModel in
             if let movieModel = movieViewModel {
                 self.movies = movieModel

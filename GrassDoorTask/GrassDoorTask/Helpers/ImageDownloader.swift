@@ -63,8 +63,4 @@ final class ImageDownloader: ObservableObject {
         }
     }
     
-    deinit {
-        cancellable?.cancel()
-    }
-    
 }

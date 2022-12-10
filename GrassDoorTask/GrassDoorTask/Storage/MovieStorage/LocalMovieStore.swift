@@ -22,7 +22,7 @@ final class LocalMovieStore: MovieStore {
             perform { context in
                 do {
                     let managedCache = try ManagedCache.newUniqueInstance(in: context, type: type)
-                    managedCache.name = type.rawValue
+                    managedCache.name = type.description
                     managedCache.feed = ManagedMovieFeed.movies(from: movie, type: type, in: context)
                     try context.save()
                     completion(nil)
@@ -44,10 +44,10 @@ final class LocalMovieStore: MovieStore {
         }
     }
     
-    func retrieveMovies(for type: String, completion: @escaping RetrievalCompletion) {
+    func retrieveMovies(for type: MovieType, completion: @escaping RetrievalCompletion) {
         perform { context in
             do {
-                if let cache = try ManagedCache.find(in: context, type: MovieType(rawValue: type) ?? .popular) {
+                if let cache = try ManagedCache.find(in: context, type: type) {
                     completion(cache.localFeed)
                 } else {
                     completion([])

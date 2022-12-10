@@ -18,3 +18,10 @@ struct Movie: Decodable, Identifiable {
     let voteCount: Int
     let voteAverage: Double?
 }
+
+struct Trailers: Decodable, Identifiable {
+    let id: String
+    let name: String
+    let key: String
+    let site: String
+}

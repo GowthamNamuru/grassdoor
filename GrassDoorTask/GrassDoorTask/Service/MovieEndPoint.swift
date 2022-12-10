@@ -7,16 +7,24 @@
 
 import Foundation
 
+fileprivate let baseURL = "https://api.themoviedb.org/3"
+
 enum MovieEndPoint: String {
     case topRated = "top_rated"
     case popular
-    
-    private var baseURL: String {
-        return "https://api.themoviedb.org/3"
-    }
-    
     /// These will be updated later
     var url: URL? {
         return URL(string: "\(baseURL)/movie/\(rawValue)")
+    }
+}
+
+enum MovieDetailsEndPoint {
+    case trailers(id: Int)
+    
+    var url: URL? {
+        switch self {
+        case let .trailers(id):
+            return URL(string: "\(baseURL)/movie/\(id)/videos")
+        }
     }
 }
